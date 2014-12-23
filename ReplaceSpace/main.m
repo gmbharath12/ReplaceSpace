@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-int countNumberOfSpcaes(NSString *string)
+//counts number of spaces in a string
+int countNumberOfSpaces(NSString *string)
 {
     int count = 0;
     NSString *emptyString = @" ";
@@ -24,7 +25,7 @@ int countNumberOfSpcaes(NSString *string)
     return count;
 }
 
-
+//replace space with '%20'
 void replaceSpaceWithPercentSymbolTwenty(NSUInteger stringLength, int capacity, unichar* charPtr)
 {
     int index = capacity-1;
@@ -51,7 +52,7 @@ int main(int argc, const char * argv[])
     {
         NSString *string = @"abcd e";
         NSUInteger stringLength = [string length];
-        int numberOfSpaces = countNumberOfSpcaes(string);
+        int numberOfSpaces = countNumberOfSpaces(string);
         int capacity = (int)(stringLength + (numberOfSpaces *2));
         unichar characters[capacity];
         unichar *charPtr = characters;
